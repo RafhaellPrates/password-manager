@@ -1,15 +1,25 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "'Servidor para gerir as senhas.'",
+  "keywords": [],
+  "homepage": "https://github.com/RafhaellPrates/password-manager#readme",
+  "bugs": {
+    "url": "https://github.com/RafhaellPrates/password-manager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafhaellPrates/password-manager.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Rafhael Prates",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
