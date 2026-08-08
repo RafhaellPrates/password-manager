@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import express from 'express'
-import pool from './db/index.js'
 import cors from 'cors'
+import userRouter from './routes/userRoutes.js'
+import healthRouter from './routes/healthRouter.js'
 const PORT = process.env.PORT
 const app = express()
 
@@ -11,19 +12,10 @@ const app = express()
     app.use(express.json())
     app.use(cors({origin: 'http://localhost:5173',credentials:true}))
 
+// Routes
+    app.use(healthRouter)
+    app.use('/auth',userRouter)
 
-app.get('/health',async (req,res)  => {
-
-    try{
-        const [ results , fields ] = await pool.query('SELECT 1');
-        
-        res.sendStatus(200)
-        
-    } catch (err){
-        console.log(err)
-        res.sendStatus(500)
-    }
-})
 
 
 app.listen(PORT)
