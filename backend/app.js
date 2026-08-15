@@ -3,6 +3,9 @@ import express from 'express'
 import cors from 'cors'
 import userRouter from './routes/userRoutes.js'
 import healthRouter from './routes/healthRouter.js'
+import itemsRouter from './routes/itemsRouter.js'
+
+
 const PORT = process.env.PORT
 const app = express()
 
@@ -15,6 +18,7 @@ const app = express()
 // Routes
     app.use(healthRouter)
     app.use('/auth',userRouter)
+    app.use('/items',itemsRouter)
 
 
 

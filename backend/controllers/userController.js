@@ -85,5 +85,6 @@ const login_post = async (req,res)=>{
 
 export default {
     register_Post,
-    login_post
+    login_post,
+   
 }

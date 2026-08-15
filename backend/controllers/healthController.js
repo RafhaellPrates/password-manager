@@ -11,4 +11,6 @@ const health = async (req,res)  => {
         res.status(500).json({erro:'Erro interno'})
     }
 }
-export default health
+export default {
+    health
+}
